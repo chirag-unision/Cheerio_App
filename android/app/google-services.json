@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "119928848990",
+    "project_id": "cheerioassignment",
+    "storage_bucket": "cheerioassignment.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:119928848990:android:ba12f9dc431d4db581eacf",
+        "android_client_info": {
+          "package_name": "com.cheerioassignment"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzQpR4RqtZNC2HP-6fYHVpL5IDBEUckmY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
