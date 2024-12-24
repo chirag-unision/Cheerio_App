@@ -3,6 +3,7 @@ import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import {PermissionsAndroid} from 'react-native';
 import messaging from '@react-native-firebase/messaging';
 import notifee from '@notifee/react-native';
+import { url } from './app.json'
 
 PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.POST_NOTIFICATIONS);
 
@@ -16,11 +17,21 @@ function App(): React.JSX.Element {
     }
   }, [])
 
-  
   const init= async () => {
     const token = await messaging().getToken();
-    console.log('FCM Token:', token);
-  };
+    fetch(url+'/save', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({token: token})
+      })
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.error('Error:', error));
+
+      console.log('FCM Token:', token);
+    };
 
   messaging().onMessage(async remoteMessage => {
     console.log('Notification received in foreground:', remoteMessage);
